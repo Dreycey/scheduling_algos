@@ -93,10 +93,10 @@ def dict2stack(graph_dict):
     node_array = []
     for node in graph_dict.keys():
         criticality = calc_criticality(node, graph_dict, [], 0)
-        row_array = [node, criticality]
+        row_array = [node, float(criticality)]
         node_array.append(row_array)
-    
-    return np.sort(node_array, axis=1)
+    node_array = np.array(node_array, dtype=object)
+    return node_array[node_array[:,1].argsort()][::-1]
  
 
 # running the script
