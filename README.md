@@ -11,11 +11,12 @@ python scheduler.py input.csv
 ### input
 
 The following graph as a csv:
- 
+``` 
 A -> B
  \   |
   D->C->L
-
+```
+As a csv file:
 ```
 A,B,1000
 A,D,100001
